@@ -4,7 +4,7 @@ import com.company.Command;
 
 public class Empty extends Command {
     @Override
-    public void Execute() throws Exception {
+    public void Execute(boolean is_thread) throws Exception {
 
     }
 }

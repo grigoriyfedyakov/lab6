@@ -1,7 +1,7 @@
 package com.company.Models;
 
-import com.company.Manager.TicketManager;
-import com.company.Witers.Printer;
+
+import com.company.Main;
 
 import java.util.Objects;
 
@@ -24,8 +24,8 @@ public class Venue {
     }
 
     public Venue(String name, int capacity, VenueType type) {
-        id = TicketManager.ids_Venue;
-        TicketManager.ids_Venue++;
+        id = Main.ids_venue;
+        Main.ids_venue++;
         this.name = name;
         this.capacity = capacity;
         this.type = type;
@@ -36,10 +36,6 @@ public class Venue {
     }
 
     public void setName(String name) {
-        if(name == null || name.equals("")){
-            name = getClass().getSimpleName();
-            Printer.getInstance().WriteLine("поле name введено неверно. Оно заменено на Venue");
-        }
         this.name = name;
     }
 
@@ -48,10 +44,6 @@ public class Venue {
     }
 
     public void setCapacity(int capacity) {
-        if(capacity <= 0){
-            Printer.getInstance().WriteLine("поле capacity введено неверно. Заменено на 1");
-            capacity = 1;
-        }
         this.capacity = capacity;
     }
 

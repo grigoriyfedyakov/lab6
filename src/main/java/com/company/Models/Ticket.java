@@ -1,6 +1,6 @@
 package com.company.Models;
 
-import com.company.Manager.TicketManager;
+import com.company.Main;
 
 import java.time.ZonedDateTime;
 
@@ -32,9 +32,14 @@ public class Ticket implements Comparable<Ticket>{
         setVenue(venue);
     }
 
+    public Ticket() {
+        this.id = Main.ids;
+        Main.ids++;
+    }
+
     public Ticket(String name, Coordinates coordinates, Integer price, Integer discount, TicketType type, Venue venue) {
-        this.id = TicketManager.ids_ticket;
-        TicketManager.ids_ticket++;
+        this.id = Main.ids;
+        Main.ids++;
         setName(name);
         setCoordinates(coordinates);
         setPrice(price);
